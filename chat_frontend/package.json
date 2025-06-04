@@ -1,0 +1,37 @@
+{
+  "name": "ai-chat-template",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -H 127.0.0.1",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "axios": "^1.9.0",
+    "docx": "^9.5.0",
+    "exceljs": "^4.4.0",
+    "file-saver": "^2.0.5",
+    "jwt-decode": "^4.0.0",
+    "lucide-react": "^0.263.1",
+    "mammoth": "^1.6.0",
+    "next": "^15.3.2",
+    "openai": "^4.20.1",
+    "pdf-parse": "^1.1.1",
+    "react": "^18",
+    "react-breadcrumbs": "1.6.x",
+    "react-dom": "^18",
+    "zustand": "^5.0.5"
+  },
+  "devDependencies": {
+    "@types/file-saver": "^2.0.7",
+    "@types/pdf-parse": "^1.1.5",
+    "@types/react": "19.1.6",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.0",
+    "postcss": "^8.5.4",
+    "tailwindcss": "^3.4.17"
+  }
+}
