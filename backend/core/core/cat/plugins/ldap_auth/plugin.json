@@ -1,0 +1,7 @@
+{
+  "name": "ldap_auth",
+  "version": "0.1.0",
+  "description": "...",
+  "dependencies": ["ldap3>=2.9"],
+  "auth_handler": "ldap_auth.auth:LDAPAuth"
+}

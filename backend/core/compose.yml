@@ -1,0 +1,33 @@
+services:
+  cheshire-cat-core:
+    build:
+      context: ./core         # (cartella dov’è il Dockerfile di Cheshire Cat)
+    container_name: cheshire_cat_core
+
+    ports:
+      - "1865:80"             # CAT API / Admin UI
+      - "5678:5678"           # opz. debug
+
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+    environment:
+      TZ: "Europe/Rome"
+      LOG_LEVEL: "INFO"
+      CCAT_JWT_SECRET: "super-secret-32-bytes-string"
+
+      # -------- LDAP -------------
+      LDAP_BIND_USER: "CN=Marco Ornito,OU=Milano,DC=lascalaw,DC=local"
+      LDAP_BIND_PWD:  "Gennaio2025!"
+      LDAP_URL:       "ldap://lsa-dc01.lascalaw.local:389"
+      LDAP_BASE_DN:   "DC=lascalaw,DC=local"
+      LDAP_USER_FILTER: "(sAMAccountName={username})"
+      CCAT_DEFAULT_ROLE: "ornito"
+      CCAT_SELECTED_AUTH_HANDLER: "LDAPAuth"
+      # ---------------------------
+
+    volumes:
+      - ./core:/app   # tutta la code-base + plugin compresi
+
+    command: ["python", "-m", "cat.main"]
+    restart: unless-stopped

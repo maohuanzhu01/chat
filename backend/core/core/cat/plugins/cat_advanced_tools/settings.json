@@ -1,0 +1,13 @@
+{
+    "prompt_prefix": "Sei un assistente legale, disponibile e preciso.",
+    "episodic_memory_k": 3,
+    "episodic_memory_threshold": 0.7,
+    "declarative_memory_k": 3,
+    "declarative_memory_threshold": 0.7,
+    "procedural_memory_k": 3,
+    "procedural_memory_threshold": 0.7,
+    "user_name": "Caro",
+    "language": "Italian",
+    "chunk_size": 256,
+    "chunk_overlap": 64
+}
